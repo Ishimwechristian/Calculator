@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f2430;
+  font-family: system-ui, sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  padding: 16px;
+  background: #2b3140;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.display {
+  min-height: 80px;
+  margin-bottom: 12px;
+  padding: 16px;
+  background: #11151d;
+  color: #f5f7fa;
+  font-size: 2.4rem;
+  text-align: right;
+  border-radius: 10px;
+  overflow: hidden;
+  word-break: break-all;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smaller text for messages like the divide-by-zero warning */
+.display.error {
+  font-size: 1.2rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 18px 0;
+  border: none;
+  border-radius: 10px;
+  background: #4a5263;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s, filter 0.05s;
+}
+
+button:hover:not(:disabled) {
+  background: #5c6679;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.operator {
+  background: #f29b38;
+}
+
+button.operator:hover:not(:disabled) {
+  background: #ffaf55;
+}
+
+button.function {
+  background: #7b8496;
+}
+
+button.span-2 {
+  grid-column: span 2;
+}
+
+/* Brief highlight when a key is pressed on the keyboard */
+button.active {
+  transform: scale(0.95);
+  filter: brightness(1.3);
+}
